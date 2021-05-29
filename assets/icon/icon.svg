@@ -12,8 +12,11 @@
    viewBox="0 0 135.46666 135.46666"
    version="1.1"
    id="svg8"
-   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)"
-   sodipodi:docname="icon.svg">
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="/home/feo/code/genbog/assets/icon/icon.png"
+   inkscape:export-xdpi="96.000008"
+   inkscape:export-ydpi="96.000008"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -23,9 +26,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.15942408"
-     inkscape:cx="949.0001"
-     inkscape:cy="-457.91867"
+     inkscape:zoom="0.61881612"
+     inkscape:cx="206.00011"
+     inkscape:cy="380.35869"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -56,19 +59,32 @@
     </rdf:RDF>
   </metadata>
   <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2">
+    <rect
+       style="color:#000000;overflow:visible;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1130"
+       width="220.13333"
+       height="203.2"
+       x="-33.866665"
+       y="-16.933332"
+       ry="7.4083333" />
+  </g>
+  <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       style="fill:#d1e8e8;fill-rule:evenodd;stroke:#ffffff;stroke-width:6.61458333;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#d1e8e8;fill-rule:evenodd;stroke:#ffffff;stroke-width:6.61458333;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
        d="M 0,55.033332 67.73333,122.76666 V 88.899998 L 0,21.166668 Z"
        id="path835" />
     <path
-       style="fill:#ffd7da;fill-rule:evenodd;stroke:#ffffff;stroke-width:6.61458333;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#ffd7da;fill-rule:evenodd;stroke:#ffffff;stroke-width:6.61458333;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
        d="m 0,21.166668 67.73333,-6.35 67.73333,67.73333 -67.73333,6.35 z"
        id="path837" />
     <path
-       style="fill:#f7eecc;fill-rule:evenodd;stroke:#ffffff;stroke-width:6.61458333;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#f7eecc;fill-rule:evenodd;stroke:#ffffff;stroke-width:6.61458333;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
        d="m 67.73333,122.76666 67.73333,-6.35 V 82.549998 l -67.73333,6.35 z"
        id="path839" />
     <rect
