@@ -46,12 +46,16 @@ class _ListPageState extends State<ListPage> {
             margin: EdgeInsets.all(8),
             child: FloatingActionButton(
               onPressed: () async {
-                List<BookInfo> result = await Navigator.push(
+                List<BookInfo>? result = await Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => QRMultiPage(),
                   ),
                 );
+
+                if (result == null) {
+                  return;
+                }
 
                 var apiResult = await API.postBooks(result);
                 if (apiResult.error != null) {
