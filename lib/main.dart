@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_genbog/api.dart';
 import 'package:flutter_genbog/info.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
@@ -22,13 +23,18 @@ class ListPage extends StatefulWidget {
 }
 
 class _ListPageState extends State<ListPage> {
+  final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey = new GlobalKey<RefreshIndicatorState>();
   List<BookInfo> remoteBooks = [];
 
   @override
-  Widget build(BuildContext context) {
-    final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey = new GlobalKey<RefreshIndicatorState>();
-    _refreshIndicatorKey.currentState?.show();
+  void initState() {
+    super.initState();
+    SchedulerBinding.instance!.addPostFrameCallback((_){  _refreshIndicatorKey.currentState?.show(); } );
+  }
 
+  @override
+  Widget build(BuildContext context) {
+    
     return Scaffold(
         appBar: AppBar(
           title: Text("GenBog"),
