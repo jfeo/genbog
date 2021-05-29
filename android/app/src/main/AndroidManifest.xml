@@ -41,4 +41,6 @@
 
     <!-- We need android.permission.CAMERA to scan barcodes -->
     <uses-permission android:name="android.permission.CAMERA" />
+    <!-- We need android.permission.INTERNET to communicate with API's -->
+    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
