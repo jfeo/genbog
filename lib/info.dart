@@ -1,17 +1,18 @@
 
 
 import 'dart:convert';
-import 'dart:typed_data';
 import 'package:http/http.dart' as http;
 
 class BookInfo {
   String? _title;
+  String? _subtitle;
   List<AuthorInfo> _authors = [];
   String _isbn = "";
-  Uint8List? _thumbnailData;
+  Uri? _thumbnail;
+  List<Uri> _covers = <Uri>[];
 
-  Uint8List? get thumbnailData {
-    return _thumbnailData;
+  Uri? get thumbnail {
+    return _thumbnail;
   }
 
   String get isbn {
@@ -22,15 +23,24 @@ class BookInfo {
     return _title;
   }
 
+  String? get subtitle {
+    return _subtitle;
+  }
+
   List<AuthorInfo> get authors {
     return _authors;
   }
 
+  List<Uri> get covers {
+    return _covers;
+  }
 
-  BookInfo(String isbn, { String? title, List<AuthorInfo> authors = const [] }) {
+  BookInfo(String isbn, { String? title, String? subtitle, List<AuthorInfo> authors = const [], List<Uri> covers = const [] }) {
     _isbn = isbn;
     _title = title;
+    _subtitle = subtitle;
     _authors = authors;
+    _covers = covers;
   }
 
   static Future<BookInfo> fetch(String isbn) async {
@@ -50,6 +60,10 @@ class BookInfo {
     var bookData = json['ISBN:$isbn'] as Map<String, dynamic>;
     var details = bookData['details'] as Map<String, dynamic>;
     var title = details['title'] as String;
+    List<Uri> covers = [];
+    for (int id in details['covers'] ?? []) {
+      covers.add(Uri.parse("http://covers.openlibrary.org/b/id/$id-L.jpg"));
+    }
     var authorFutures = details.containsKey('authors') ? (details['authors'] as List<dynamic>).map((author) {
       return AuthorInfo.fetch(author['key'] as String);
     }) : <Future<AuthorInfo>>[];
@@ -61,12 +75,10 @@ class BookInfo {
       }
     }
 
-    var book = BookInfo(isbn, title: title, authors: authors);
+    var book = BookInfo(isbn, title: title, authors: authors, covers: covers);
 
     if (bookData.containsKey('thumbnail_url')) {
-      var thumbnailData =
-          await http.readBytes(Uri.parse(bookData['thumbnail_url']));
-      book._thumbnailData = thumbnailData;
+      book._thumbnail = Uri.parse(bookData['thumbnail_url']);
     }
 
     return book;
